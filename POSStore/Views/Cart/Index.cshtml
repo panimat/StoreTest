@@ -1,0 +1,19 @@
+﻿@model CartViewModel
+
+<div class="container">
+    @{
+        foreach (var x in Model.stCart.itemStoreList)
+        {
+            <div class="alert alert-warning mt-5">
+                <p>Модель: @x.product.name</p>
+                <p>Цена: @x.product.price.ToString("c")</p>
+                <p>Количество: @x.amount</p>
+                <p>Сумма: @(x.product.price * x.amount)</p>
+                <a class=" btn btn-danger" asp-controller="Cart" asp-action="addToCart" asp-route-id="@x.product.id">Добавить</a>
+                <a class=" btn btn-danger" asp-controller="Cart" asp-action="removeFromCart" asp-route-id="@x.product.id">Удалить</a>
+            </div>
+        }
+    }
+    <br>
+    <a class=" btn btn-danger" asp-controller="Order" asp-action="CheckData">Заказать</a>
+</div>

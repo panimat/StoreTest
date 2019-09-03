@@ -2,15 +2,51 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>9f7bcbbb-32dd-4b48-9e40-dcb7808998ac</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Compile Remove="Data\Mocks\**" />
+    <Compile Remove="Data\Repositories\NewFolder\**" />
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Data\Mocks\**" />
+    <Content Remove="Data\Repositories\NewFolder\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Data\Mocks\**" />
+    <EmbeddedResource Remove="Data\Repositories\NewFolder\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Data\Mocks\**" />
+    <None Remove="Data\Repositories\NewFolder\**" />
+    <None Remove="Migrations\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Migrations\20190902210953_Init.cs" />
+    <Compile Include="Migrations\20190902210953_Init.Designer.cs" />
+    <Compile Include="Migrations\20190903051906_OrderDetails.cs" />
+    <Compile Include="Migrations\20190903051906_OrderDetails.Designer.cs" />
+    <Compile Include="Migrations\20190903201032_SetNew.cs" />
+    <Compile Include="Migrations\20190903201032_SetNew.Designer.cs" />
+    <Compile Include="Migrations\AppDBInfoModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
+    <PackageReference Include="JSON" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Owin.Security.Google" Version="3.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
 </Project>

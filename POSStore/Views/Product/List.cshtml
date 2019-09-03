@@ -1,0 +1,10 @@
+﻿<h2>@Model.productCategory</h2>
+
+<div class="row mt-5 mb-2 ml-5">
+    @{
+        foreach (Product x in Model.GetProduct)
+        {
+            @Html.Partial("Products", x);
+        }
+    }
+</div>
